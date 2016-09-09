@@ -10,7 +10,8 @@ _A webpage that allows users to save contact information using PHP Silex and twi
 
 ## Specifications
 
-* _1._
+* _1.User can add a contacts info and save it._
+* _2.User can clear their contacts list._
 
 ## Setup/Installation Requirements
 
@@ -29,8 +30,11 @@ _For questions or information email: ian@ianbaum.com_
 
 ## Technologies Used
 
-* _HTML_
+* _Bootstrap_
 * _CSS_
+* _HTML_
+* _JavaScript_
+* _jQUery_
 * _PHP_
 * _Silex_
 * _Twig_
