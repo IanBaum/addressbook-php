@@ -10,8 +10,8 @@
         {% for contact in contacts %}
           <li>{{contact.getName}}</li>
           <ul>
-            <li>{{contact.getAddress}}</li>
-            <li>{{contact.getPhone}}</li>
+            <li>Address: {{contact.getAddress}}</li>
+            <li>Phone Number: {{contact.getPhone}}</li>
           </ul>
         {% endfor %}
       </ul>
@@ -25,6 +25,9 @@
       <label for='contactPhone'>Contact's Phone Number:</label>
       <input id='contactPhone' name='contactPhone' type='text' placeholder='123-456-7890'>
       <button type='submit'>Add Contact</button>
+    </form>
+    <form action='/delete_contacts' method='post'>
+      <button type='submit'>Clear List</button>
     </form>
   </body>
 </html>
