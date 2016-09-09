@@ -19,6 +19,7 @@ _A webpage that allows users to save contact information using PHP Silex and twi
 * _run "composer install" in your console_
 * _start a server with "php -S localhost:8000" in the web folder of this project_
 * _go to localhost:8000 in a browser of your choice_
+* _requires internet connection for bootstrap_
 
 ## Known Bugs
 

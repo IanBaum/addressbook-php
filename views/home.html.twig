@@ -1,33 +1,46 @@
 <html>
   <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="../css/styles.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="../js/scripts.js"></script>
     <title>Address Book</title>
   </head>
   <body>
-    <h1>Address Book</h1>
-    {% if contacts is not empty %}
-      <h3>Contacts:</h3>
-      <ul>
-        {% for contact in contacts %}
-          <li>{{contact.getName}}</li>
-          <ul>
-            <li>Address: {{contact.getAddress}}</li>
-            <li>Phone Number: {{contact.getPhone}}</li>
-          </ul>
-        {% endfor %}
-      </ul>
-    {% endif %}
+    <div class="container">
+      <h1>Address Book</h1>
+      {% if contacts is not empty %}
+        <h3>Contacts:</h3>
+        <ul>
+          {% for contact in contacts %}
+            <li>{{contact.getName}}</li>
+            <ul>
+              <li>Address: {{contact.getAddress}}</li>
+              <li>Phone Number: {{contact.getPhone}}</li>
+            </ul>
+          {% endfor %}
+        </ul>
+      {% endif %}
 
-    <form action='/addcontact' method='post'>
-      <label for='contactName'>Contact's Name:</label>
-      <input id='contactName' name='contactName' type='text' placeholder='Name'>
-      <label for='contactAddress'>Contact's Address:</label>
-      <input id='contactAddress' name='contactAddress' type='text' placeholder='1234 Road Street, City State, Country ZIP'>
-      <label for='contactPhone'>Contact's Phone Number:</label>
-      <input id='contactPhone' name='contactPhone' type='text' placeholder='123-456-7890'>
-      <button type='submit'>Add Contact</button>
-    </form>
-    <form action='/delete_contacts' method='post'>
-      <button type='submit'>Clear List</button>
-    </form>
+      <form action='/addcontact' method='post'>
+        <div class='form-group'>
+          <label for='contactName'>Contact's Name:</label>
+          <input id='contactName' name='contactName' class="form-control" type='text' placeholder='Name'>
+        </div>
+        <div class='form-group'>
+          <label for='contactAddress'>Contact's Address:</label>
+          <input id='contactAddress' name='contactAddress' class="form-control" type='text' placeholder='1234 Road Street, City State, Country ZIP'>
+        </div>
+        <div class='form-group'>
+          <label for='contactPhone'>Contact's Phone Number:</label>
+          <input id='contactPhone' name='contactPhone' class="form-control" type='text' placeholder='123-456-7890'>
+        </div>
+        <button type='submit' class="btn btn-primary">Add Contact</button>
+      </form>
+      <form action='/delete_contacts' method='post'>
+        <button type='submit' class="btn btn-danger">Clear List</button>
+      </form>
+    </div>
   </body>
 </html>
