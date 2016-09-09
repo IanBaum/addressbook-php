@@ -4,6 +4,27 @@
   </head>
   <body>
     <h1>Address Book</h1>
-    
+    {% if contacts is not empty %}
+      <h3>Contacts:</h3>
+      <ul>
+        {% for contact in contacts %}
+          <li>{{contact.getName}}</li>
+          <ul>
+            <li>{{contact.getAddress}}</li>
+            <li>{{contact.getPhone}}</li>
+          </ul>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    <form action='/addcontact' method='post'>
+      <label for='contactName'>Contact's Name:</label>
+      <input id='contactName' name='contactName' type='text' placeholder='Name'>
+      <label for='contactAddress'>Contact's Address:</label>
+      <input id='contactAddress' name='contactAddress' type='text' placeholder='1234 Road Street, City State, Country ZIP'>
+      <label for='contactPhone'>Contact's Phone Number:</label>
+      <input id='contactPhone' name='contactPhone' type='text' placeholder='123-456-7890'>
+      <button type='submit'>Add Contact</button>
+    </form>
   </body>
 </html>
